@@ -1,8 +1,8 @@
 #!/usr/bin/node
 
-class rectangle {
+class Rectangle {
   constructor (w, h) {
-    if (w > 0 && h > 0) {
+    if (typeof w === 'number' && w > 0 && typeof h === 'number' && h > 0) {
       this.width = w;
       this.height = h;
     }
@@ -10,17 +10,27 @@ class rectangle {
 
   print () {
     for (let i = 0; i < this.height; i++) {
-      let s = '';
-      for (let j = 0; j < this.width; j++) {
-        s += 'X';
+      let myVar = '';
+      let y = 0;
+      while (y < this.width) {
+        myVar += 'X';
+        y++;
       }
-      console.log(s);
+
+      console.log(myVar);
     }
   }
- 
- rotate () {
-    const aux = this.width;
+
+  rotate () {
+    let temp = 0;
+    temp = this.width;
     this.width = this.height;
-    this.height = aux;
+    this.height = temp;
+  }
+
+  double () {
+    this.width *= 2;
+    this.height *= 2;
   }
 }
+module.exports = Rectangle;
