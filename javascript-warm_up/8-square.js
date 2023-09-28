@@ -1,15 +1,18 @@
 #!/usr/bin/node
 
-const squareSize = process.argv[2];
-const mySquare = parseInt(squareSize);
-const x = "N";
+const x = process.argv[2];
 
-if (isNaN(mySquare)) {
-    console.log("Missing size");
-}
+if (!parseInt(x)) {
+  console.log('Missing size');
+} else {
+  for (let i = 0; i < x; i++) {
+    let y = 0;
+    let myVar = '';
 
-else {
-    for (let i = 0; i < mySquare; i++) {
-        console.log(x.repeat(mySquare));
+    while (y < x) {
+      myVar = myVar + 'X';
+      y++;
     }
+    console.log(myVar);
+  }
 }

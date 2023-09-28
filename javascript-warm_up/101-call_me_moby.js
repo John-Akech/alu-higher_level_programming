@@ -1,10 +1,5 @@
 #!/usr/bin/node
 
-const callMeMobby = (x, thefunction) => {
-    if (x > 0) {
-        thefunction();
-        callMeMobby(x - 1 , thefunction);
-    }
+exports.callMeMoby = function (x, theFunction) {
+  for (let i = 0; i < x; i++) theFunction();
 };
-
-module.exports.callMeMobby = callMeMobby;
